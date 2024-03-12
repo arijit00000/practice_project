@@ -18,11 +18,23 @@
             <div class="flip-box">
                 <div class="flip-box-inner">
                     <div class="flip-box-front">
-                        <img src="{{asset('asset/image/Socialmedia.webp')}}" alt="Calling">
+                        <img src="{{asset('asset/image/Socialmedia.webp')}}" alt="Social">
                     </div>
                     <div class="flip-box-back">
                         <h2>Social</h2>
                         <p>Register & Login</p>
+                        <a href="#" class="btn mybtn">Click Here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <img src="{{asset('asset/image/adult.webp')}}" alt="Adult">
+                    </div>
+                    <div class="flip-box-back">
+                        <h2>Adult</h2>
+                        <p>Adult Content</p>
                         <a href="#" class="btn mybtn">Click Here</a>
                     </div>
                 </div>

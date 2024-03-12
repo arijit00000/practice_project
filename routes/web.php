@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Calling\callingController;
 use App\Http\Controllers\Calling\FeedbackController;
+use App\Http\Controllers\Adult\AdultController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,9 @@ Route::middleware('auth')->group(function () {
     // Route::get('/feedback/delete', [callingController::class, 'deleteFeedBack'])->name('delete.feedback');
 
     // for social media
+
+    // for adult
+    Route::get('/adult',[AdultController::class, 'returnPage'])->name('adult.page')->middleware('adult');
 });
 
 require __DIR__.'/auth.php';

@@ -29,7 +29,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
+        // dd("Arijit");
         // return redirect()->intended(RouteServiceProvider::HOME);
         return response()->json(['success'=>true]);
     }

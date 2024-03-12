@@ -40,6 +40,7 @@
         }
     }
 </script>
+
 <script>
     function submitRegistration(){
         let name = document.getElementById("name").value;
@@ -48,12 +49,7 @@
         let dob = document.getElementById("dob").value;
         let password = document.getElementById("password").value;
 
-        let dobsec = new Date(dob).getTime();
-        let date = new Date().getTime();
-        let age = date-dobsec
-        age = Math.round(age/(3600000*24*365));
-
-        let registrationdata = {name:name, email:email, mobile:mobile, age:age, password:password, _token:"{{ csrf_token() }}"}
+        let registrationdata = {name:name, email:email, mobile:mobile, dob:dob, password:password, _token:"{{ csrf_token() }}"}
 
         let newData = $.ajax({
             type:'POST',
