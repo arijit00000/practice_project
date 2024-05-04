@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Calling\callingController;
 use App\Http\Controllers\Calling\FeedbackController;
 use App\Http\Controllers\Adult\AdultController;
+use App\Http\Controllers\ApiJoin\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,5 +51,10 @@ Route::middleware('auth')->group(function () {
     // for adult
     Route::get('/adult',[AdultController::class, 'returnPage'])->name('adult.page')->middleware('adult');
 });
+
+
+// for API & Relations
+    Route::post('/student-data', [StudentController::class, 'saving'])->name('student.save');
+    Route::get('/student-show', [StudentController::class, 'show'])->name('student.show');
 
 require __DIR__.'/auth.php';
