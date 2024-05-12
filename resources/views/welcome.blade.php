@@ -40,13 +40,13 @@
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>or use your account</span>
-			<input type="email" id="email" placeholder="Email" />
+			<input type="email" id="email" placeholder="Email" name="email"/>
 			<input type="password" id="password" placeholder="Password" />
 			<a href="#">Forgot your password?</a>
-			<button onclick="submitLogin()">Sign In</button>
-            <p>Id - dutta@gmail.com</p>
-            <p>PW - arijitdutta</p>
+			<button type="button" onclick="submitLogin()">Sign In</button>
 		</form>
+		<p>Id - dutta@gmail.com</p>
+        <p>PW - arijitdutta</p>
 	</div>
 	<div class="overlay-container">
 		<div class="overlay">
@@ -65,6 +65,12 @@
 </div>
 
 <!-- Js for Design & Login -->
+<script> 
+	var loginURL = "{{route('userlogin')}}"
+	var token = "{{ csrf_token() }}"
+	var dashboard = "{{ route('dashboard') }}"
+</script>
+
 <script  src="{{asset('asset/js/login_registration.js')}}"></script>
 <script src="{{asset('asset/js/login_registration_functional.js')}}"></script>
 

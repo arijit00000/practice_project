@@ -2,17 +2,17 @@ function submitLogin(){
 	let email = document.getElementById("email").value;
 	let password = document.getElementById("password").value;
 
-	let logindata = {email:email, password:password, _token:"{{ csrf_token() }}"}
+	let logindata = {email:email, password:password, _token:token}
 
 	let newData = $.ajax({
 		type:'POST',
-		url:"{{route('userlogin')}}",
+		url:loginURL,
 		data:JSON.stringify(logindata),
 		datatype:"json",
 		contentType:"application/json",
 		success: function(response){
 			if(response.success){
-				window.location.href = "{{ route('dashboard') }}";
+				window.location.href = dashboard;
 			}
 			else{
 				Swal.fire({
